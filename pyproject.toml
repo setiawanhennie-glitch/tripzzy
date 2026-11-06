@@ -7,7 +7,9 @@ authors = [
     { name = "setiawanhennie-glitch", email = "setiawanhennie@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "python-dotenv>=1.2.4",
+]
 
 [project.scripts]
 tripzzy = "tripzzy:main"
