@@ -24,16 +24,16 @@ from langgraph.checkpoint.postgres import PostgresSaver
 from langgraph.graph import END, START, StateGraph
 from psycopg.rows import dict_row
 
-from tools.flight_tool import search_flights
-from tools.tavily_tool import tavily_search
+from tripzzy.tools.flight_tool import search_flights
+from tripzzy.tools.tavily_tool import tavily_search
 
 
 def get_database_url():
-    database_url = os.getenv("DATABASE_URL")
+    database_url = os.getenv("SUPABASE_URL")
 
     if not database_url:
         raise ValueError(
-            "DATABASE_URL is missing. Please add your Render PostgreSQL External Database URL to .env"
+            "SUPABASE_URL is missing. Please add your Render PostgreSQL External Database URL to .env"
         )
 
     if "sslmode=" not in database_url:

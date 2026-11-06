@@ -2,12 +2,13 @@ import traceback
 from pathlib import Path
 
 import uvicorn
-from backend import run_travel_agent
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
+
+from tripzzy.backend import run_travel_agent
 
 BASE_DIR = Path(__file__).resolve().parent
 
