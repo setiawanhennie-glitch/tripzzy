@@ -1,7 +1,10 @@
 import asyncio
+from mcp_client import get_all_tools
 
-from mcp_client_test import tavily_mcp_search
+
+async def main():
+    await get_all_tools()
+
 
 if __name__ == "__main__":
-    query = "latest news about AI"
-    asyncio.run(tavily_mcp_search(query))
+    asyncio.run(main())
