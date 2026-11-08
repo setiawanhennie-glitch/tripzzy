@@ -1,9 +1,9 @@
-import mcp
-from mcp.server.fastmcp import FastMCP
-import requests
 import os
-from dotenv import load_dotenv
 
+import mcp
+import requests
+from dotenv import load_dotenv
+from mcp.server.fastmcp import FastMCP
 
 load_dotenv()
 
@@ -48,7 +48,6 @@ def get_forecast(city: str):
 
     forecast = []
 
-    # Return first 5 forecast entries
     for item in data["list"][:5]:
         forecast.append(
             {
