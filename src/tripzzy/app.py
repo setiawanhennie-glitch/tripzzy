@@ -1,6 +1,7 @@
 import traceback
 from pathlib import Path
 
+import nest_asyncio
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -9,6 +10,8 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 
 from tripzzy.backend import run_travel_agent
+
+nest_asyncio.apply()
 
 BASE_DIR = Path(__file__).resolve().parent
 
